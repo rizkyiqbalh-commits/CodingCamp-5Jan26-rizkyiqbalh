@@ -1,97 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML Page</title>
+    <title>Todo List - Riz</title>
+
+    <!-- CSS External -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <h1 style="color: red;">Hello World</h1>
-    <hr/>
-    <p>I'am Rizky Iqbal Hisyam</p>
-    <p>Welcome to my sample HTML page!</p>
+    
+    <!-- Tailwind Gradient Background -->
+    <body class="min-h-screen bg-gradient-to-br from-fuchsia-600 via-purple-600 to-cyan-500 animate-gradient">
 
-    <h1>Ini heading 1</h1>
-    <h2>Ini heading 2</h2>
-    <h3>Ini heading 3</h3>
-    <h4>Ini heading 4</h4>
-    <h5>Ini heading 5</h5>
-<p>Teks ini ada <b>bold</b>-nya dan <i>italic</i>-nya</p>
-<p>Teks ini ada yang ke <sub>bawah</sub> dan ke <sup>atas</sup></p>
-<h1>Bullet poin</h1>
-<ul>
-    <li>Pisang <p>Buah yang paling enak</p></li>
-    <li>Apel</li>
-    <li>Mangga</li>
-</ul>
+    <!-- Header Content -->
+    <header>
+    <h1 class="text-3xl font-bold text-center text-white mb-6
+        drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]">
+        Todo List Website - Rizky
+    </h1>
+    </header>
 
-<h1>Urutan angka</h1>
-<p>cara menjalankan HTML dengan VScode</p>
-<ol>
-    <li>jalankan vscode</li>
-    <li>open folder</li>
-    <li>buat file HTML</li>
-    <li>isi file index.html dengan html:5</li>
-</ol>
+    <h2 class="text-2xl font-bold mt-6 text-black">
+        List of Todos
+    </h2>
 
+    <!-- Main Content -->
+    <main class="max-w-xl mx-auto mt-16 p-8 rounded-2xl 
+        bg-white/10 backdrop-blur-xl border border-white/20
+        shadow-[0_0_40px_rgba(168,85,247,0.6)]">
+        
+        <!-- Form Section -->
+        <section>
+            <form>
+                
+                <!-- Todo Input -->
+                <input type="text" id="todo-input" placeholder="Enter a new todo item" class="w-full px-4 py-2 rounded-lg bg-black/40 text-white border border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
+                
+                <!-- Date Input -->
+                <input class="border rounded p-2" type="date" id="todo-date" placeholder="Enter due date">
+            </form>
 
-<h1>Tabel</h1>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Commpany</th>
-            <th>Contack</th>
-            <th>Country</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Alfred</td>
-            <td>0812</td>
-            <td>USA</td>
-        </tr>
-        <tr>
-            <td>Budi</td>
-            <td>0852</td>
-            <td>Indonesia</td>
-        </tr>
-        <tr>
-            <td>Julian</td>
-            <td>0831</td>
-            <td>Germany</td>
-        </tr>
-    </tbody>
-</table>
+            <!-- Add Button -->
+            <div class="flex flex-wrap gap-3 mt-4">
+                <button onclick="addTodo()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                    Add Todo
+                </button>
 
-<h1>Gambar</h1>
+                <button onclick="removeAllTodo()" class="bg-red-500 text-white px-4 py-2 rounded-lg">
+                    Clear All Todos
+                </button>
 
-<img src="img.png" height="150px"
-alt="profile"/>
+                <button onclick="toggleActionMode()" class="bg-cyan-500 text-white px-4 py-2 rounded-lg"> 
+                    Filter Todos
+                </button>
+            </div>
 
-<h1>Link</h1>
-<p>Ini adalah link ke <a
-href="https://www.revou.co"
-target="_blank">RevoU</a></p>
+        </section>
+        
+        <!-- Todo List Section -->
+        <section class="pt-2">
+            <header>
+                <h1 class="text-2xl font-semibold">List of Todos</h1>
+            </header>
+            
+            <div id="action-buttons" class="flex gap-4 mt-4"></div>
 
-<h1>Form</h1>
-<form>
-    <label>Nama</label>
-    <input type="text"
-    placeholder="Tulis nama Anda..."/>
-    <br/>
-    <label>Umur</label>
-    <input type="number"
-    min="0" max="30"
-    placeholder="19"/>
-    <br/>
-    <label>Jenis kelamin</label>
-    <input type="radio"
-    value="male"
-    name="Jeis kelamin">laki-laki
-    <input type="radio"
-    value="female"
-    name="Jenis kelamin">perempuan
+            <ul class="pt-2" id="todo-list">
+                
+                <!-- Todo items will be dynamically added here -->
+                <li>No todos available</li>
+            </ul>
+            <div id="action-buttons" class="flex gap-3 mt-3"></div>
+
+        </section>
+    </main>
+
+    <!-- Footer Content -->
+    <footer class="text-center text-white/70 mt-10">
+    © 2026 Riz Todo List
+    </footer>
 
 
+    <!-- JS External -->
+    <script src="js/script.js"></script>
+</body>
 
-</form>
+</html>
